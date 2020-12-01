@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "192237345028",
+    "firebase_url": "https://app-ev2.firebaseio.com",
+    "project_id": "app-ev2",
+    "storage_bucket": "app-ev2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192237345028:android:81c53c19d9a43fe7d69851",
+        "android_client_info": {
+          "package_name": "cl.carreno.app_ev2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192237345028-ifv9iqv4hksid6f1dkdfra5be96qpp4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoo3NLbK_wUMqs3I1Vd06wuJE5U9--dUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192237345028-ifv9iqv4hksid6f1dkdfra5be96qpp4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
