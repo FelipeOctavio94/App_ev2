@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">App_ev2</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">Nis denuncias</string>
+    <string name="tab_text_2">Denunciar</string>
+    <string name="tab_text_3">Denuncias</string>
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>
