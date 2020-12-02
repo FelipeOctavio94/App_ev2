@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "196322474038",
+    "firebase_url": "https://appev2.firebaseio.com",
+    "project_id": "appev2",
+    "storage_bucket": "appev2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196322474038:android:78110881465ef2aaf58097",
+        "android_client_info": {
+          "package_name": "cl.carreno.app_ev2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196322474038-99tgsigu4okijgieaq80jjtt19keldjq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cl.carreno.app_ev2",
+            "certificate_hash": "f4c331106696686696031c2cdac9ed8314ed1924"
+          }
+        },
+        {
+          "client_id": "196322474038-n9bdnu969mao1mli0lsihcr8mr2gdr9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn__5nghgQaqqTG-AED30Ul-nbZ7bmy9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196322474038-n9bdnu969mao1mli0lsihcr8mr2gdr9m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.DenunciarFragment">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Realiza aqui tu denuncia"
+        android:gravity="center"
+        android:layout_above="@id/nuevo_LinearLayout"
+        android:layout_marginBottom="50dp"
+
+
+        android:textSize="27dp"
+        android:textColor="@color/colorAccent"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/nuevo_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="130dp"
+
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
+        android:paddingTop="60dp"
+
+        >
+
+
+
+
+        <EditText
+
+            android:id="@+id/nuevo_titulo"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Titulo"
+
+            android:textColorHint="@color/colorAccent"
+
+            android:padding="8dp"
+            />
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/nuevo_direccion"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Direccion"
+
+            android:textColorHint="@color/colorAccent"
+
+
+            android:padding="8dp"
+
+
+            />
+
+
+        <Button
+            android:id="@+id/nuevo_bt_crearDenuncia"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Denunciar"
+            android:padding="15dp"
+
+            android:textSize="25dp"
+
+
+            />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
