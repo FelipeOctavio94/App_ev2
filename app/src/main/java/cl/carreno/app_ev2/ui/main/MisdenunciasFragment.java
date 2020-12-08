@@ -23,13 +23,14 @@ import java.util.List;
 
 import cl.carreno.app_ev2.R;
 import cl.carreno.app_ev2.adapter.Adapter;
+import cl.carreno.app_ev2.adapter.AdapterMisDenuncias;
 import cl.carreno.app_ev2.model.Denuncia;
 
 
 public class MisdenunciasFragment extends Fragment {
     FirebaseAuth auth;
     List<Denuncia> list;
-    RecyclerView recyclerMisdenuncias;
+    RecyclerView recyclerView;
 
 
     @Override
@@ -37,10 +38,11 @@ public class MisdenunciasFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_misdenuncias, container, false);
-        recyclerMisdenuncias = view.findViewById(R.id.recycler_misdenuncias);
         auth = FirebaseAuth.getInstance();
-        list = new ArrayList<>();
+        recyclerView = view.findViewById(R.id.recycler_misdenuncias);
         String uid = auth.getCurrentUser().getUid();
+        list = new ArrayList<>();
+
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("denuncias").child(uid);
@@ -58,9 +60,9 @@ public class MisdenunciasFragment extends Fragment {
                     LinearLayoutManager lm = new LinearLayoutManager(getActivity());
                     lm.setOrientation(RecyclerView.VERTICAL);
 
-                    Adapter adapterDenuncia = new Adapter(getActivity(),R.layout.item_misdenuncias,list);
-                    recyclerMisdenuncias.setLayoutManager(lm);
-                    recyclerMisdenuncias.setAdapter(adapterDenuncia);
+                    AdapterMisDenuncias adapterMisDenuncias = new AdapterMisDenuncias(getActivity(),R.layout.item_misdenuncias,list);
+                    recyclerView.setLayoutManager(lm);
+                    recyclerView.setAdapter(adapterMisDenuncias);
                 }
             }
 

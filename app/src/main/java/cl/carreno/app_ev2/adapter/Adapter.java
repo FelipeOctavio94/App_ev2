@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,7 +39,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DenunciaHolder>{
         Denuncia denuncia = list.get(position);
         holder.titulo.setText(denuncia.getTitulo());
         holder.direccion.setText(denuncia.getDireccion());
-        holder.id = denuncia.getId();
+
+
+        int e = Integer.parseInt(denuncia.getEstado());
+        if(e == 1){
+            holder.item_estado.setImageResource(R.drawable.apagado);
+        }
+        if (e == 0 ){
+            holder.item_estado.setImageResource(R.drawable.encendido);
+        }
+
     }
 
     @Override
@@ -47,13 +57,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DenunciaHolder>{
     }
 
     public class DenunciaHolder extends RecyclerView.ViewHolder{
-        TextView titulo, direccion;
-        String id;
+
+        public TextView titulo , direccion , id;
+        ImageView item_estado;
 
         public DenunciaHolder(@NonNull View itemView) {
             super(itemView);
+            id = itemView.findViewById(R.id.item_denuncia);
             titulo =  itemView.findViewById(R.id.item_denuncia_title);
             direccion = itemView.findViewById(R.id.item_denuncia_direccion);
+            item_estado = itemView.findViewById(R.id.item_estado);
         }
     }
 

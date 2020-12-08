@@ -7,7 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".RegistrarActivity"
     android:background="#343B45"
-    android:orientation="vertical">
+    android:paddingVertical="80dp"
+    android:orientation="vertical"
+    android:paddingHorizontal="60dp"
+    >
 
     <EditText
         android:id="@+id/register_txt_email"

@@ -29,55 +29,37 @@ public class DenunciarFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_denunciar, container, false);
 
-        txt_titulo=view.findViewById(R.id.nuevo_titulo);
-        txt_direccion=view.findViewById(R.id.nuevo_direccion);
-        button_crear = view.findViewById(R.id.nuevo_bt_crearDenuncia);
+        txt_titulo = view.findViewById(R.id.nuevo_titulo);
+        txt_direccion = view.findViewById(R.id.nuevo_direccion);
         auth = FirebaseAuth.getInstance();
+        button_crear = view.findViewById(R.id.nuevo_bt_crearDenuncia);
+
         button_crear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String titulo = txt_titulo.getText().toString();
+                String direccion = txt_direccion.getText().toString();
+                String uid = auth.getCurrentUser().getUid();
 
-                String mensaje = crearDenuncia();
+                if (!titulo.isEmpty() && !direccion.isEmpty()){
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("denuncia").child(uid);
+                    Denuncia denuncias = new Denuncia();
+                    denuncias.setTitulo(titulo);
+                    denuncias.setDireccion(direccion);
+                    denuncias.setEstado("1");
+                    myRef.push().setValue(denuncias);
+                    Toast.makeText(getActivity(),"Denuncia creada con exito",Toast.LENGTH_SHORT).show();
+                    txt_titulo.setText("");
+                    txt_direccion.setText("");
 
-                Toast.makeText(getActivity(),mensaje, Toast.LENGTH_LONG).show();
-
+                }else {
+                    Toast.makeText(getActivity(),"Campos vacios, por favor ingrese los datos",Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         return view;
-    }
-
-    public String crearDenuncia(){
-
-        String titulo, direccion, uid, msg;
-        uid = auth.getCurrentUser().getUid();
-        titulo = txt_titulo.getText().toString();
-        direccion = txt_direccion.getText().toString();
-
-
-        if (titulo.isEmpty()||direccion.isEmpty()){
-
-            msg="complete los campos";
-
-        }else{
-
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference("denuncias").child(uid);
-
-            Denuncia denuncia = new Denuncia();
-
-            denuncia.setTitulo(titulo);
-            denuncia.setDireccion(direccion);
-            myRef.push().setValue(denuncia);
-
-            msg= "Denuncia registrada correctamente";
-
-
-        }
-
-
-        return msg;
-
 
     }
 }

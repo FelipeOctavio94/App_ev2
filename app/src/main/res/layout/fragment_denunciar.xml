@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.DenunciarFragment">
+    tools:context=".ui.main.DenunciarFragment"
+    android:background="#343B45">
 
 
     <TextView
@@ -13,10 +14,8 @@
         android:gravity="center"
         android:layout_above="@id/nuevo_LinearLayout"
         android:layout_marginBottom="50dp"
-
-
-        android:textSize="27dp"
-        android:textColor="@color/colorAccent"
+        android:textSize="35dp"
+        android:textColor="#FFB842"
 
         />
 
@@ -27,7 +26,6 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         android:paddingBottom="130dp"
-
         android:paddingLeft="45dp"
         android:paddingRight="45dp"
         android:paddingTop="60dp"
@@ -44,9 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Titulo"
-
-            android:textColorHint="@color/colorAccent"
-
+            android:textColorHint="#FFB842"
             android:padding="8dp"
             />
 
@@ -61,10 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Direccion"
-
-            android:textColorHint="@color/colorAccent"
-
-
+            android:textColorHint="#FFB842"
             android:padding="8dp"
 
 
@@ -77,10 +70,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Denunciar"
+            android:background="#FFB842"
             android:padding="15dp"
-
             android:textSize="25dp"
-
+            android:textColor="#FFF"
 
             />
 

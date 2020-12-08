@@ -28,37 +28,42 @@ import cl.carreno.app_ev2.model.Denuncia;
 
 public class DenunciasFragment extends Fragment {
     FirebaseAuth auth;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
     List<Denuncia> list;
-    RecyclerView recyclerdenuncias;
+    RecyclerView recyclerView;
+    String uid;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_denuncias, container, false);
-        recyclerdenuncias = view.findViewById(R.id.recycler_denuncias);
+        recyclerView = view.findViewById(R.id.recycler_denuncias);
         auth = FirebaseAuth.getInstance();
         list = new ArrayList<>();
-        String uid = auth.getCurrentUser().getUid();
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("denuncias").child(uid);
+        database = FirebaseDatabase.getInstance();
+        uid = auth.getUid();
+        myRef=database.getReference("denuncias");
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
                     list.clear();
+
                     for (DataSnapshot ds : dataSnapshot.getChildren()){
-                        Denuncia denuncia = ds.getValue(Denuncia.class);
-                        denuncia.setId(ds.getKey());
-                        list.add(denuncia);
+                        for (DataSnapshot ds_denuncias: ds.getChildren()){
+                            Denuncia denuncias = ds_denuncias.getValue(Denuncia.class);
+                            denuncias.setId(ds_denuncias.getKey());
+                            list.add(denuncias);
+                        }
                     }
                     LinearLayoutManager lm = new LinearLayoutManager(getActivity());
                     lm.setOrientation(RecyclerView.VERTICAL);
+                    Adapter adapter = new Adapter(getActivity(), R.layout.item_denuncias,list);
 
-                    Adapter adapterDenuncia = new Adapter(getActivity(),R.layout.item_denuncias,list);
-                    recyclerdenuncias.setLayoutManager(lm);
-                    recyclerdenuncias.setAdapter(adapterDenuncia);
+                    recyclerView.setLayoutManager(lm);
+                    recyclerView.setAdapter(adapter);
                 }
             }
 
@@ -66,9 +71,8 @@ public class DenunciasFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-
-
         });
+
         return view;
 
     }

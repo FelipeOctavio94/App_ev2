@@ -5,7 +5,7 @@ public class Usuario {
     private String nombre;
     private String email;
     private String celular;
-    private String Userid;
+    private String uid;
 
     public Usuario(){
 
@@ -44,10 +44,8 @@ public class Usuario {
     }
 
     public String getUserid() {
-        return Userid;
+        return uid;
     }
 
-    public void setUserid(String userid) {
-        Userid = userid;
-    }
+    public void setUserid(String userid) { uid = uid; }
 }
