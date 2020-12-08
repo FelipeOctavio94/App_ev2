@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#343B45"
+    android:gravity="center"
     tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/login_txt_email"
-        android:layout_width="match_parent"
+        android:layout_width="264dp"
         android:layout_height="wrap_content"
-        android:hint="Ingrese su correo"
+        android:layout_marginTop="350px"
+        android:layout_marginBottom="100px"
+        android:backgroundTint="#8A9398"
+        android:drawableLeft="@drawable/arroba"
+        android:hint="  Ingrese su correo"
+        android:background="#3E4750"
         android:inputType="textEmailAddress"
-        />
+        android:textColorLink="#8A9398" />
+
     <EditText
         android:id="@+id/login_txt_password"
-        android:layout_width="match_parent"
+        android:layout_width="263dp"
         android:layout_height="wrap_content"
-        android:hint="Ingrese su contraseña"
-        android:inputType="textPassword"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Iniciar sesión"
-        android:onClick="iniciarSesion"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="#3E4750"
+        android:backgroundTint="#8A9398"
+        android:drawableLeft="@drawable/candado"
+        android:hint="  Ingrese su contraseña"
+        android:inputType="textPassword" />
 
-        android:text="No tiene cuenta?, Registrase aqui"
+    <Button
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100px"
+        android:background="#FFB842"
+        android:bottomRightRadius="10dp"
+        android:onClick="iniciarSesion"
+        android:text="Iniciar sesión"
+        android:textColor="#FFF" />
+
+    <TextView
+        android:layout_width="223dp"
+        android:layout_marginTop="650px"
+        android:layout_height="50dp"
+        android:gravity="center"
         android:onClick="launchRegister"
-        android:gravity="center"/>
+        android:text="Registrarse"
+        android:drawableRight="@drawable/flecha"
+        android:background="#3E4750"
+        android:textColor="#8A9398" />
 
 
 </LinearLayout>
