@@ -10,6 +10,13 @@ public class Denuncia {
 
     }
 
+    public Denuncia(String id, String titulo, String direccion, String estado) {
+        this.id = id;
+        this.titulo = titulo;
+        this.direccion = direccion;
+        this.estado = estado;
+    }
+
     public String getId() {
         return id;
     }

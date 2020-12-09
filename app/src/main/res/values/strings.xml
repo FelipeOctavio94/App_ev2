@@ -3,5 +3,9 @@
     <string name="tab_text_1">Nis denuncias</string>
     <string name="tab_text_2">Denunciar</string>
     <string name="tab_text_3">Denuncias</string>
+    <string name="ingrese_su_correo">  Ingrese su correo</string>
+
+    <string name="facebook_app_id">419817112401752</string>
+    <string name="fb_login_protocol_scheme">fb419817112401752</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

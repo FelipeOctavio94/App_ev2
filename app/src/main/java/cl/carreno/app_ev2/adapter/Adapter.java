@@ -21,10 +21,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DenunciaHolder>{
     private int layout;
     private List<Denuncia> list;
 
-    public Adapter(Activity activity, int layout, List<Denuncia> denuncia) {
+    public Adapter(Activity activity, int layout, List<Denuncia> list) {
         this.activity = activity;
         this.layout = layout;
-        this.list = denuncia;
+        this.list = list;
     }
 
     @NonNull

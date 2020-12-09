@@ -43,9 +43,11 @@ public class Usuario {
         this.celular = celular;
     }
 
-    public String getUserid() {
+    public String getUid() {
         return uid;
     }
 
-    public void setUserid(String userid) { uid = uid; }
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 }

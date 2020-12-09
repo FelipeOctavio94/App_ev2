@@ -3,6 +3,7 @@ package cl.carreno.app_ev2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -33,14 +34,12 @@ public class RegistrarActivity extends AppCompatActivity {
     }
 
     public void crearCuenta(View view) {
-        final String email,nombre,celular,password;
-        email = txt_email.getText().toString();
-        nombre = txt_nombre.getText().toString();
-        celular = txt_celular.getText().toString();
-        password = txt_password.getText().toString();
-        if(email.isEmpty() || nombre.isEmpty() || celular.isEmpty() || password.isEmpty()){
-            Toast.makeText(this,"Los campos están vacíos",Toast.LENGTH_LONG).show();
-        }else{
+        final String email = txt_email.getText().toString();
+        final String nombre = txt_nombre.getText().toString();
+        final String celular = txt_celular.getText().toString();
+        String password = txt_password.getText().toString();
+
+        if(!email.isEmpty() || !nombre.isEmpty() || !celular.isEmpty() || !password.isEmpty()){
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(RegistrarActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -52,14 +51,25 @@ public class RegistrarActivity extends AppCompatActivity {
                                 user.setNombre(nombre);
                                 user.setCelular(celular);
                                 user.setEmail(email);
-                                user.setUserid(task.getResult().getUser().getUid());
+                                user.setUid(task.getResult().getUser().getUid());
                                 myRef.push().setValue(user);
                                 Toast.makeText(RegistrarActivity.this,"Cuenta creada con exito",Toast.LENGTH_LONG).show();
+
+                                Intent intent = new Intent(RegistrarActivity.this,MainActivity.class);
+                                startActivity(intent);
+                                finish();
                             } else {
-                                Toast.makeText(RegistrarActivity.this,"No se pudo crear la cuenta",Toast.LENGTH_LONG).show();
+                                String msg = task.getException().getMessage();
+                                Toast.makeText(RegistrarActivity.this , msg , Toast.LENGTH_SHORT).show();
+                                txt_password.setText("");
                             }
                         }
                     });
+        }else{
+            Toast.makeText(this,"complete los campos vacios",Toast.LENGTH_SHORT).show();
+
         }
     }
+
+
 }
