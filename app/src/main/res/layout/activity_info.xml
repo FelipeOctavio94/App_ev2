@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity"
+    android:paddingVertical="50dp"
+    android:background="#343B45">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/logo"
+        android:id="@+id/logo"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/about_us"
+        android:text="Creadores:"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_below="@id/logo"
+        android:textColor="#FFB842"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="40dp"
+        />
+
+    <TextView
+        android:id="@+id/felipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Felipe Carreño"
+        android:textSize="25sp"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/about_us"
+        android:layout_centerInParent="true"
+        android:textColor="#FFB842"
+        />
+
+    <TextView
+        android:id="@+id/cristhobal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cristhobal Canales"
+        android:textSize="25sp"
+        android:layout_marginTop="26dp"
+        android:layout_below="@id/felipe"
+        android:layout_centerInParent="true"
+        android:textColor="#FFB842"
+        />
+
+
+</RelativeLayout>

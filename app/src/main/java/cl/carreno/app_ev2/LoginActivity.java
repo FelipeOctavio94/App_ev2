@@ -30,13 +30,11 @@ import java.util.Arrays;
 public class LoginActivity extends AppCompatActivity {
     private LoginButton loginButton;
     private CallbackManager callbackManager;
-    private FirebaseAuth mAuth;
+
     EditText txt_email, txt_password;
     FirebaseAuth auth;
 
-    public LoginActivity(FirebaseAuth mAuth) {
-        this.mAuth = mAuth;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

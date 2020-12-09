@@ -6,6 +6,7 @@ public class Usuario {
     private String email;
     private String celular;
     private String uid;
+    private String password;
 
     public Usuario(){
 
@@ -49,5 +50,13 @@ public class Usuario {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

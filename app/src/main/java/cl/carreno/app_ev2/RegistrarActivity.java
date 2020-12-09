@@ -37,7 +37,7 @@ public class RegistrarActivity extends AppCompatActivity {
         final String email = txt_email.getText().toString();
         final String nombre = txt_nombre.getText().toString();
         final String celular = txt_celular.getText().toString();
-        String password = txt_password.getText().toString();
+        final String password = txt_password.getText().toString();
 
         if(!email.isEmpty() || !nombre.isEmpty() || !celular.isEmpty() || !password.isEmpty()){
             auth.createUserWithEmailAndPassword(email, password)
@@ -51,6 +51,7 @@ public class RegistrarActivity extends AppCompatActivity {
                                 user.setNombre(nombre);
                                 user.setCelular(celular);
                                 user.setEmail(email);
+                                user.setPassword(password);
                                 user.setUid(task.getResult().getUser().getUid());
                                 myRef.push().setValue(user);
                                 Toast.makeText(RegistrarActivity.this,"Cuenta creada con exito",Toast.LENGTH_LONG).show();
@@ -60,8 +61,8 @@ public class RegistrarActivity extends AppCompatActivity {
                                 finish();
                             } else {
                                 String msg = task.getException().getMessage();
-                                Toast.makeText(RegistrarActivity.this , msg , Toast.LENGTH_SHORT).show();
-                                txt_password.setText("");
+                                Toast.makeText(RegistrarActivity.this , "Hubo un error, intentelo de nuevo" , Toast.LENGTH_SHORT).show();
+
                             }
                         }
                     });
